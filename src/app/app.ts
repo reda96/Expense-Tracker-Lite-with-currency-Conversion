@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AddExpenseComponent } from './features/add-expense/add-expense.component';
 
 @Component({
   selector: 'app-root',
