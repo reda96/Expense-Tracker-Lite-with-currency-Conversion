@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Epense_Tracker_Project": {
+    "Expense_Tracker_Project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -31,7 +31,8 @@
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "outputPath": "dist/Expense_Tracker_Project"
           },
           "configurations": {
             "production": {
@@ -61,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Epense_Tracker_Project:build:production"
+              "buildTarget": "Expense_Tracker_Project:build:production"
             },
             "development": {
-              "buildTarget": "Epense_Tracker_Project:build:development"
+              "buildTarget": "Expense_Tracker_Project:build:development"
             }
           },
           "defaultConfiguration": "development"

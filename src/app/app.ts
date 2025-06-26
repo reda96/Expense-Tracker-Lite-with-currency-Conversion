@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
-  protected title = 'Epense_Tracker_Project';
+  protected title = 'Expense_Tracker_Project';
 }
