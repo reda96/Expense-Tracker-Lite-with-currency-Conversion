@@ -6,8 +6,9 @@
     class="category-card"
     type="button"
     [class.selected]="cat.value === selectedCategory"
-    (click)="selectedCategory = cat.value"
-  >
+    (click)="onSelectionChange(cat.value)"
+  >  
+  
     <mat-icon>{{ cat.icon }}</mat-icon>
    <span [ngStyle]="{color:selectedCategory==cat.value?'#3f51b5':'#000'}" class="cat_label" >{{ cat.label }}</span>
    

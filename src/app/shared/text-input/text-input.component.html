@@ -4,7 +4,7 @@
 <mat-form-field appearance="outline">
   <span *ngIf="prefix" matPrefix>{{prefix}}</span>
   <input
-   
+     (change)="changeValue($event)"
      [type]="hide ? type : type=='password'?'text':type" 
     class="form-control"
     [placeholder]="placeholder"

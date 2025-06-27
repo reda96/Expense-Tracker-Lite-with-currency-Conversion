@@ -1,16 +1,81 @@
+<div class="form-container">
+  <h2 class="title">
+    <button class="back_btn" mat-button (click)="goBack()">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <span style="display: inline-block">Add Expense</span>
+  </h2>
+  <app-form [form]="form" [formSubmit]="addExpense">
+    <app-dropdown
+      placeholder="Entertainment"
+      id="category"
+      name="category"
+      [required]="true"
+      label="Categories"
+      [options]="categories"
+      [control]="form.get('category')"
+    ></app-dropdown>
+    <app-text-input
+      [valueSignal]="originalAmount" 
+      prefix=""
+      [control]="form.get('originalAmount')"
+      label="Amount"
+      name="originalAmount"
+      id="originalAmount"
+      type="number"
+      placeholder="$50,000"
+      [required]="true"
+    ></app-text-input>
+    <app-date-input
+      [control]="form.get('date')"
+      label="Date"
+      name="date"
+      id="date"
+      type="date"
+      placeholder="02/01/24"
+      [required]="true"
+    ></app-date-input>
+    <app-image-input
+      [valueSignal]="imageObject" 
+      [control]="form.get('image')"
+      label="Attach Receipt"
+      name="image"
+      id="image"
+      type="file" 
+      placeholder="Upload image"
+      [required]="true"
+    ></app-image-input>
+    <app-icon-selection
+      placeholder="Entertainment"
+      id="icon"
+      name="icon"
+      [required]="true"
+      label="Categories"
+      [categories]="categories"
+      [control]="form.get('icon')"
+    ></app-icon-selection>
+    <app-dropdown
+      placeholder="USD"
+      id="currency"
+      name="currency"
+      [required]="true"
+      label="Currencies"
+      [options]="currencies"
+      [control]="form.get('currency')"
+      [valueSignal]="currency" 
 
-<div   class="form-container" >
-<h2 class="title " >Add Expense</h2>
-<app-form  [form]="form" [formSubmit]="addExpense" >
-    <app-dropdown  placeholder="Entertainment" id="category" name="category"
-    [required]="true" label="Categories" [options]="categories" [control]="form.get('category')"  ></app-dropdown>
-<app-text-input prefix=""  [control]="form.get('amount')" label="Amount" name="amount" id="amount" type="number" placeholder="$50,000"  [required]="true"></app-text-input>
-<app-date-input  [control]="form.get('date')" label="Date" name="date" id="date" type="date" placeholder="02/01/24"  [required]="true"></app-date-input>
-<app-image-input [control]="form.get('image')" label="Attach Receipt" name="image" id="image" type="file" placeholder="Upload image"  [required]="true" ></app-image-input>
-<app-icon-selection placeholder="Entertainment" id="icon" name="icon"
-    [required]="true" label="Categories" [categories]="categories" [control]="form.get('icon')" ></app-icon-selection>
-     <app-dropdown  placeholder="USD" id="currency" name="currency"
-    [required]="true" label="Categories" [options]="currencies" [control]="form.get('currency')"  ></app-dropdown>
-<app-button type="submit" label="Save"></app-button>
-</app-form>
+    ></app-dropdown>
+        <app-loading-disabled-input
+       [convertedAmount]="convertedAmount"
+      [control]="form.get('convertedAmount')"
+      [isLoading]="isLoadingExchangeRate"
+      name="convertedAmount"
+      id="convertedAmount"
+      type="number"
+      label="Converted Amount in USD"
+      placeholder="converting..."
+    ></app-loading-disabled-input>
+    <app-button [disabled]="isLoadingExchangeRate()|| !convertedAmount()" type="submit" label="Save"></app-button>
+
+  </app-form>
 </div>

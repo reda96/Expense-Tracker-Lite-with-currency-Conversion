@@ -19,7 +19,7 @@
     
   flex-direction: column;
   align-items: center;
-  padding: 0;
+  padding: 0 !important;
   border-radius: 7px;
   margin: auto;
   
@@ -45,14 +45,17 @@
     // background-color: #e8eaf6;
   }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px) { 
+    .cat_label {
+        font-size: 12px;
+    }
     .category-card mat-icon {
- font-size: 24px
+ font-size: 20px
 }
 
     .category-grid>div {
 
-  width: calc(100%/3);
+  width: calc(100%/4);
     
 }
 }

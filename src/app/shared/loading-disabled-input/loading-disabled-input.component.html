@@ -1,0 +1,24 @@
+<ng-container *ngIf="isLoading() || convertedAmount()">
+<mat-label>{{label}}</mat-label>
+<mat-form-field appearance="outline" class="full-width">
+  
+
+  <!-- Disabled input to display converted value -->
+  <input
+    matInput
+    [ngClass]="convertedAmount()&&!isLoading()?'':'none'"
+    [formControl]="control"
+    [placeholder]="placeholder"
+    readonly>
+
+  <!-- Spinner while loading -->
+  <div matSuffix class="spinner-container">
+    <mat-progress-spinner
+      *ngIf="isLoading()"
+      mode="indeterminate"
+      diameter="20"
+      color="primary">
+    </mat-progress-spinner>
+  </div>
+</mat-form-field>
+</ng-container>

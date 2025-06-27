@@ -10,12 +10,14 @@
          #fileInput
          (change)="onFileSelected($event)"
          accept="image/*"
+          [formControl]="control"
          hidden>
 
   <!-- Fake input to trigger file input -->
   <input matInput
          [value]="selectedFileName"
          placeholder="Upload image"
+        
          readonly
          (click)="fileInput.click()">
 

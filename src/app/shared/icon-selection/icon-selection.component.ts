@@ -11,6 +11,12 @@ import { SharedModule } from '../shared.module';
 export class IconSelectionComponent extends BaseFormInputComponent{
   @Input() categories!:any[];
   selectedCategory='';
-
+    onSelectionChange(value: string) {
+      this.selectedCategory=value;
+    const selected = this.categories.find(opt => opt.value === value);
+    if (selected) {
+      this.control?.setValue(selected.value);
+    }
+  }
   
 }

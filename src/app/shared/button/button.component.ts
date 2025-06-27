@@ -10,6 +10,7 @@ import { BaseFormInputComponent } from '../base/base-form-input.directive';
 export class ButtonComponent {
   @Input() type!:string;
   @Input() label!:string
+  @Input() disabled!:boolean;
 
 
 }

@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import { AddExpenseComponent } from './features/add-expense/add-expense.component';
-import { AuthComponent } from './features/auth/auth.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  { path: 'add-expense', component: AddExpenseComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '', component: AuthComponent }
+  { path: 'add-expense', canActivate: [authGuard], loadComponent: () => import('./features/add-expense/add-expense.component').then(m => m.AddExpenseComponent) },
+  { path: 'dashboard', canActivate: [authGuard],loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent) },
+  { path: 'login', loadComponent: () => import('./features/auth/auth.component').then(m=>m.AuthComponent) },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];

@@ -55,3 +55,7 @@ mat-label {
      height: auto !important;
     width: auto !important;
 }
+.mat-mdc-form-field-infix:has(.none) {
+    flex:none;
+    width: 45%;
+}

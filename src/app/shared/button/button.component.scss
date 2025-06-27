@@ -8,4 +8,9 @@
     color: white;
     font-size: 18px;
     outline: none;
+    margin-bottom: 10px;
+}
+.btn:disabled {
+        background: lightgray;
+    color: gray;
 }
