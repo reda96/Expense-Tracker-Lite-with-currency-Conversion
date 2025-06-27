@@ -11,10 +11,12 @@ export abstract class BaseFormInputComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() required: boolean = false;
   @Input() type:string='';
+  hide = false;
     ngOnInit(): void {
     if (!this.control) {
       throw new Error('FormControl is required');
     }
+    if(this.type == 'password') this.hide=true;
   }
 
   get showError(): boolean {

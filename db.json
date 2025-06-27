@@ -1,0 +1,208 @@
+    {
+      "expenses": [
+  {
+    "id": "e001",
+    "userId": "u001",
+    "category": "Groceries",
+    "icon": "🛒",
+    "amount": 85.40,
+    "date": "2025-06-24T12:00:00Z"
+  },
+  {
+    "id": "e002",
+    "userId": "u001",
+    "category": "Entertainment",
+    "icon": "🎮",
+    "amount": 120.00,
+    "date": "2025-06-14T19:15:00Z"
+  },
+  {
+    "id": "e003",
+    "userId": "u001",
+    "category": "Transportation",
+    "icon": "🚌",
+    "amount": 60.25,
+    "date": "2025-06-01T08:00:00Z"
+  },
+  {
+    "id": "e004",
+    "userId": "u001",
+    "category": "Gas",
+    "icon": "⛽",
+    "amount": 38.50,
+    "date": "2025-04-10T11:15:00Z"
+  },
+  {
+    "id": "e005",
+    "userId": "u001",
+    "category": "Shopping",
+    "icon": "🛍️",
+    "amount": 150.00,
+    "date": "2025-04-14T16:45:00Z"
+  },
+  {
+    "id": "e006",
+    "userId": "u001",
+    "category": "Groceries",
+    "icon": "🛒",
+    "amount": 45.20,
+    "date": "2025-04-21T12:20:00Z"
+  },
+  {
+    "id": "e007",
+    "userId": "u001",
+    "category": "Entertainment",
+    "icon": "🎬",
+    "amount": 90.00,
+    "date": "2025-05-05T20:10:00Z"
+  },
+  {
+    "id": "e008",
+    "userId": "u001",
+    "category": "Transportation",
+    "icon": "🚗",
+    "amount": 33.10,
+    "date": "2025-05-08T07:30:00Z"
+  },
+  {
+    "id": "e009",
+    "userId": "u001",
+    "category": "Rent",
+    "icon": "🏠",
+    "amount": 950.00,
+    "date": "2025-04-01T00:00:00Z"
+  },
+  {
+    "id": "e010",
+    "userId": "u001",
+    "category": "Groceries",
+    "icon": "🛒",
+    "amount": 66.30,
+    "date": "2025-05-10T11:45:00Z"
+  },
+  {
+    "id": "e011",
+    "userId": "u001",
+    "category": "Gas",
+    "icon": "⛽",
+    "amount": 40.00,
+    "date": "2025-05-14T08:00:00Z"
+  },
+  {
+    "id": "e012",
+    "userId": "u001",
+    "category": "Shopping",
+    "icon": "🛍️",
+    "amount": 200.00,
+    "date": "2025-05-16T16:10:00Z"
+  },
+  {
+    "id": "e013",
+    "userId": "u001",
+    "category": "Entertainment",
+    "icon": "🎮",
+    "amount": 110.00,
+    "date": "2025-06-02T17:40:00Z"
+  },
+  {
+    "id": "e014",
+    "userId": "u001",
+    "category": "Transportation",
+    "icon": "🚌",
+    "amount": 25.00,
+    "date": "2025-06-03T09:15:00Z"
+  },
+  {
+    "id": "e015",
+    "userId": "u001",
+    "category": "Groceries",
+    "icon": "🛒",
+    "amount": 52.90,
+    "date": "2025-06-04T12:30:00Z"
+  },
+  {
+    "id": "e016",
+    "userId": "u001",
+    "category": "Gas",
+    "icon": "⛽",
+    "amount": 39.99,
+    "date": "2025-06-05T10:10:00Z"
+  },
+  {
+    "id": "e017",
+    "userId": "u001",
+    "category": "Entertainment",
+    "icon": "🎬",
+    "amount": 77.77,
+    "date": "2025-06-06T20:30:00Z"
+  },
+  {
+    "id": "e018",
+    "userId": "u001",
+    "category": "Transportation",
+    "icon": "🚗",
+    "amount": 45.00,
+    "date": "2025-06-07T07:20:00Z"
+  },
+  {
+    "id": "e019",
+    "userId": "u001",
+    "category": "Shopping",
+    "icon": "🛍️",
+    "amount": 130.00,
+    "date": "2025-06-08T13:10:00Z"
+  },
+  {
+    "id": "e020",
+    "userId": "u001",
+    "category": "Groceries",
+    "icon": "🛒",
+    "amount": 90.00,
+    "date": "2025-06-09T11:11:00Z"
+  },
+  {
+    "id": "e021",
+    "userId": "u001",
+    "category": "Gas",
+    "icon": "⛽",
+    "amount": 47.25,
+    "date": "2025-06-10T10:10:00Z"
+  },
+  {
+    "id": "e022",
+    "userId": "u001",
+    "category": "Entertainment",
+    "icon": "🎮",
+    "amount": 99.99,
+    "date": "2025-06-11T21:45:00Z"
+  }
+]
+
+,
+      "users": [
+  {
+    "id": "u001",
+    "name": "Shihab Rahman",
+    "email": "shihab@example.com",
+    "password": "pass1234",
+    "avatar": "https://i.pravatar.cc/150?img=1"
+  },
+  {
+    "id": "u002",
+    "name": "Layla Ahmed",
+    "email": "layla@example.com",
+    "password": "layla2025!",
+    "avatar": "https://i.pravatar.cc/150?img=2"
+  },
+  {
+    "id": "u003",
+    "name": "Mohamed Elsayed",
+    "email": "mohamed@example.com",
+    "password": "mo@Secure99",
+    "avatar": "https://i.pravatar.cc/150?img=3"
+  }
+]
+
+
+
+    }

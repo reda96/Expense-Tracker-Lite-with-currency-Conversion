@@ -1,11 +1,11 @@
 <div   class="form-container" >
-<h3  >Expenset.</h3>
+<h2 class="title primary" >Expenset.</h2>
 
-<app-form *ngIf="form" [form]="form">
-<h4  >Login</h4>
+<app-form  [form]="form" [formSubmit]="login">
+<h4 class="title"  >Login</h4>
 
 <app-text-input  [control]="form.get('email')"   label="Email"  name="email" id="email" type="email" placeholder="Enter your Name" [required]="true"></app-text-input>
 <app-text-input   [control]="form.get('password')" label="Password" name="password" id="password" type="password" placeholder="**********"  [required]="true"></app-text-input>
-<button type="submit">submit</button>
+<app-button type="submit" label="submit"></app-button>
 </app-form>
 </div>

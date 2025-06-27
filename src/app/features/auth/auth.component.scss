@@ -1,6 +1,21 @@
 .form-container { 
 
 
-    max-width:1200px;
+    max-width:70%;
     margin-inline:auto;
+}
+.title {
+    text-align: center;
+}
+.primary {
+    color:#2962ff
+}
+
+
+@media screen and (max-width:768px) {
+    .form-container { 
+
+
+    max-width:90%;
+}
 }

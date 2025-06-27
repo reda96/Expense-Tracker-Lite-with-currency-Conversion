@@ -11,22 +11,23 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class FormComponent implements OnInit{
    @Input() form!:FormGroup;
-   @Output() formSubmit = new EventEmitter();
+   @Input() formSubmit!:any;
    
  
 
    ngOnInit(): void {
   
    }
+    onSubmit() {
+    
+         if (!this.form) return;
+    if(this.form?.invalid)
+    this.form.markAllAsTouched();
 
-   submit() { 
-    console.log(this.form.value);
-        if (this.form.valid) {
-      this.formSubmit.emit(this.form.value);
-    } else {
-      
-      
-      this.form?.markAllAsTouched();
+    if (this.form.valid && this.formSubmit) {
+      this.formSubmit();
     }
-   }
+  }
+   
+
 }

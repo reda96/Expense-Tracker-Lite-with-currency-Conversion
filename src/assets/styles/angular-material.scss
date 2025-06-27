@@ -1,0 +1,47 @@
+/* Backgrounds */
+$background-main: #f6f9ff;
+$input-background: #f2f2f2;
+
+
+.mat-mdc-form-field {
+  width: 100%;;
+}
+.mat-mdc-text-field-wrapper {
+    background-color: $input-background	;
+    border-radius: 7px;
+}
+.mat-mdc-text-field-wrapper:not(:has(.ng-invalid.ng-touched)) {
+    border: none;
+ 
+}
+.form-container .mdc-text-field {
+ 
+    border-radius: 7px;
+}
+.mdc-text-field--outlined:not(:has(.ng-invalid.ng-touched))  * {
+    border: none;
+   
+}
+.mdc-text-field--outlined:has(.ng-valid.ng-touched.ng-dirty)   {
+    border: 1px solid #4caf50;
+   
+}
+
+mat-label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom:10px;
+    display: block;
+}
+.mat-mdc-form-field {
+  .mat-mdc-form-field-subscript-wrapper {
+        height: 25px;
+    }
+.mat-mdc-form-field-error-wrapper {
+  
+    padding: 0 ;
+    .mat-mdc-form-field-error {
+    margin-bottom: 10px;
+    }
+}
+}

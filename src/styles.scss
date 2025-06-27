@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+/* Backgrounds */
+$color-background-main: #f6f9ff;
+$color-input-background: #f2f2f2;
 
+@import url(assets/styles/angular-material.scss);
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.toast-success {
+  background-color: #4caf50 !important; // green
+  color: white;
+}
+.toast-error {
+  background-color: #f44336 !important; // red
+  color: white;
+}
+.toast-info {
+  background-color: #2196f3 !important; // blue
+  color: white;
+}
