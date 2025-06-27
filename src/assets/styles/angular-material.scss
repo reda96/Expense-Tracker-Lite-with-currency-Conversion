@@ -44,4 +44,14 @@ mat-label {
     margin-bottom: 10px;
     }
 }
+.mat-mdc-select-placeholder, .mdc-text-field__input::placeholder {
+  color: #c7c9d9 !important; // Your desired placeholder color
+  opacity: 1 !important;     // Ensure it's visible (default is 0.54)
+}
+}
+
+.category-card mat-icon {
+    font-size: 24px;
+     height: auto !important;
+    width: auto !important;
 }

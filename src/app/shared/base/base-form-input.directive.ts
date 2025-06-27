@@ -24,7 +24,7 @@ export abstract class BaseFormInputComponent implements OnInit {
   }
 
   get errorMessage(): string {
-    if (this.control.errors?.['required']) return 'This field is required';
+    if (this.control.errors?.['required']) return `The ${this.name} is required`;
     if (this.control.errors?.['minlength']) return 'Too short';
     if (this.control.errors?.['maxlength']) return 'Too long';
     return 'Invalid value';

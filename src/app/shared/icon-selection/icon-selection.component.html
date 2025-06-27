@@ -1,0 +1,21 @@
+<mat-label class="label">{{label}}</mat-label>
+<div class="category-grid">
+    <div *ngFor="let cat of categories">
+  <button
+    mat-button
+    class="category-card"
+    type="button"
+    [class.selected]="cat.value === selectedCategory"
+    (click)="selectedCategory = cat.value"
+  >
+    <mat-icon>{{ cat.icon }}</mat-icon>
+   <span [ngStyle]="{color:selectedCategory==cat.value?'#3f51b5':'#000'}" class="cat_label" >{{ cat.label }}</span>
+   
+  </button>
+</div>
+</div>
+
+<!-- Optional display -->
+<!-- <p class="mt-2" *ngIf="selectedCategory">
+  Selected: <strong>{{ selectedCategory }}</strong>
+</p> -->

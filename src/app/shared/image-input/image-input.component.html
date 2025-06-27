@@ -1,0 +1,29 @@
+<div >
+
+     <mat-label>{{label}}</mat-label>
+
+<mat-form-field appearance="outline" >
+ 
+
+  <!-- Hidden file input -->
+  <input type="file"
+         #fileInput
+         (change)="onFileSelected($event)"
+         accept="image/*"
+         hidden>
+
+  <!-- Fake input to trigger file input -->
+  <input matInput
+         [value]="selectedFileName"
+         placeholder="Upload image"
+         readonly
+         (click)="fileInput.click()">
+
+  <!-- Optional suffix icon -->
+  <button mat-icon-button matSuffix (click)="fileInput.click()" type="button">
+    <mat-icon>photo_camera</mat-icon>
+  </button>
+
+ <mat-error *ngIf="showError">{{ errorMessage }}</mat-error>
+</mat-form-field>
+</div>

@@ -1,4 +1,16 @@
-<app-form >
-<app-text-input></app-text-input>
 
+<div   class="form-container" >
+<h2 class="title " >Add Expense</h2>
+<app-form  [form]="form" [formSubmit]="addExpense" >
+    <app-dropdown  placeholder="Entertainment" id="category" name="category"
+    [required]="true" label="Categories" [options]="categories" [control]="form.get('category')"  ></app-dropdown>
+<app-text-input prefix=""  [control]="form.get('amount')" label="Amount" name="amount" id="amount" type="number" placeholder="$50,000"  [required]="true"></app-text-input>
+<app-date-input  [control]="form.get('date')" label="Date" name="date" id="date" type="date" placeholder="02/01/24"  [required]="true"></app-date-input>
+<app-image-input [control]="form.get('image')" label="Attach Receipt" name="image" id="image" type="file" placeholder="Upload image"  [required]="true" ></app-image-input>
+<app-icon-selection placeholder="Entertainment" id="icon" name="icon"
+    [required]="true" label="Categories" [categories]="categories" [control]="form.get('icon')" ></app-icon-selection>
+     <app-dropdown  placeholder="USD" id="currency" name="currency"
+    [required]="true" label="Categories" [options]="currencies" [control]="form.get('currency')"  ></app-dropdown>
+<app-button type="submit" label="Save"></app-button>
 </app-form>
+</div>

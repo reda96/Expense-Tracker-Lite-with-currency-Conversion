@@ -2,10 +2,10 @@
     <div><mat-label>{{ label }}</mat-label>
         </div>
 <mat-form-field appearance="outline">
- 
+  <span *ngIf="prefix" matPrefix>{{prefix}}</span>
   <input
    
-     [type]="hide ? type : 'text'" 
+     [type]="hide ? type : type=='password'?'text':type" 
     class="form-control"
     [placeholder]="placeholder"
     [id]="id"

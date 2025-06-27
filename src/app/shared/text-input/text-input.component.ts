@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BaseFormInputComponent } from '../base/base-form-input.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,5 +14,5 @@ import { MatIconModule } from '@angular/material/icon';
   
 })
 export class TextInputComponent extends BaseFormInputComponent {
-   
+   @Input() prefix=''
 }
