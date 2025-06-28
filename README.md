@@ -1,59 +1,31 @@
-# ExpenseTrackerProject
+1-Overview of the architecture and structure
+  a- the project folder structure conatains 
+     - shared folder to contain shared reuseable components
+     - features folder contains screen components
+     - core folder contains (services, models, guards)
+     - styles.scss and assets folder contain global styles
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+2- API Integration
+  a- I have used Json-Servser and adding (Expenses, users, currencies exchange rates)
+  b- Add dateInt to add date as integer to enable json server to compare between dates in filter
+  c- adding queries like page, per_page, sort, filter to filter, paginate and sort
+  d- there are three users added
+  e- showing loading  spinner in converted amount input while loading currencies exhcange rate and calculate the amount
+3- ​Pagination strategy
+  a- implamented through api (10 items per page) and handle pagination infinite scroll and add loading spinner under the current items while loading
+4- The application consist of Login, Dashboard and AddExpens  screens 
+![alt text](image-3.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 
-## Development server
+5- to run the project 
+  a- clone the repo
+  b-run json-server --watch db.json in root folder
+  c- run npm start in root folder
+  d- login with user (shihab@example.com, pass1234) for more than 10 expenses 
+  d- login with user (layla@example.com, layla2025!) for empty expenses 
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+6- Test cases 
+ a- to run test cases run ng test (run only focused tests)
+ b- I have implemented UI Test Cases in ProfileSectionComponent, test currency calculation and form validation in AddExpenseComponent and test Pagination in DashboardComponent
+ 
