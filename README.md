@@ -4,6 +4,7 @@
      - features folder contains screen components
      - core folder contains (services, models, guards)
      - styles.scss and assets folder contain global styles
+     - I have used Signals and Behavior subject for state management, Angular Material for icons, UI Components and Json Server for Backend APIs
 
 2- API Integration
   a- I have used Json-Servser and adding (Expenses, users, currencies exchange rates)
