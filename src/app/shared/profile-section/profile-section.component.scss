@@ -1,0 +1,54 @@
+.profile_bar {
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+.avatar  img 
+{ border-radius: 50%;
+    border: none;
+    width: 70px;
+}
+.avatar {
+    margin-inline-end: 30px;
+}
+.welcome_msg {
+    font-weight: 300;
+    margin-top: 10px;
+}
+.name {
+    font-weight: 500;
+    margin-top: 10px;
+}
+.profile_container {
+    display: flex;
+    justify-content: space-between;
+     max-width: 75%;
+    margin: auto;
+     padding-top: 20px;
+}
+.btn_logout {
+    background-color: transparent;
+    color: white;
+    height: 100%;
+}
+
+@media screen and (max-width:768px) {
+  
+    .name,.welcome_msg {
+        font-size: 14px;
+    }
+    .form-control {
+        font-size: 10px;
+    }
+    .welcome_msg {
+        margin-top: 0;
+    }
+    .profile_container {
+        max-width: 90% };
+        .avatar {
+    margin-inline-end: 15px;
+  img {  width: 50px;
+}}  
+}

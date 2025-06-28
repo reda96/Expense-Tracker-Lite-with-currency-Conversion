@@ -4,4 +4,6 @@ export interface User {
   email: string;
   password: string;
   avatar: string; // URL to user's profile image
+  income:number;
+  expenses:number;
 }

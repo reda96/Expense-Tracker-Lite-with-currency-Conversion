@@ -1,0 +1,31 @@
+<div class="profile_container">
+<div class="profile_bar" >
+    <div class="avatar">
+        <img [src]="avatarUrl" alt="">
+    </div>
+    <div>
+        <div class="welcome_msg" >{{ welcomeMessage}}</div>
+        <div class="name">{{ userName}}</div>
+    </div>
+   
+</div>
+ <div style="display: flex;align-items: center;max-width: 45%;margin-inline-end: 10px" >
+        <mat-form-field  appearance="outline">
+    <mat-select
+      class="form-control"
+      aria-placeholder="filter By"
+      [value]="filterValue"
+      (selectionChange)="onSelectionChange($event.value)"
+    >
+      <mat-option *ngFor="let option of filterOptions" [value]="option.value">
+        {{ option.label }}
+      </mat-option>
+    </mat-select>
+     <button mat-icon-button matSuffix disableRipple class="custom-icon">
+    <mat-icon>expand_more</mat-icon> <!-- Replace with any icon -->
+  </button>
+  </mat-form-field>
+  <button mat-icon-button class="btn_logout" (click)="logout()" sty aria-label="Logout">
+  <mat-icon>logout</mat-icon>
+</button>
+    </div></div>

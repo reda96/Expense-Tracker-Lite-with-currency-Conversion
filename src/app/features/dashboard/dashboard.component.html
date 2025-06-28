@@ -1,11 +1,86 @@
 <div>
- <div class="profile_card">
-   <div class="balance_card">
-
-   </div>
-   <div>
-    <div class="titl">Recent Expenses</div>
-    <div></div>
-   </div>
- </div>
+  <div class="profile_card">
+    <div>
+      <app-profile-section
+        [avatarUrl]="loggedInUser()?.avatar || ''"
+        welcomeMessage="Good Morning"
+        [userName]="loggedInUser()?.name || ''"
+        [filterFunction]="filterExpenses"
+        [filterValue]="filterType"
+      ></app-profile-section>
+    </div>
+    <div class="balance_card">
+      <div class="balance">
+        <div style="font-size: 20px">
+          <span style="display: inline-block; font-weight: 300"
+            >Total Balance</span
+          >
+          <mat-icon class="icon">expand_less</mat-icon>
+        </div>
+        <div style="margin-top: 5px; font-size: 42px; font-weight: 500">
+          ${{ totalBalance() }}
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="income_expenses">
+        <div>
+          <div class="income">
+            <mat-icon class="small_icon">arrow_downward</mat-icon>
+            <span class="income_h">Income</span>
+          </div>
+          <div class="income_value">${{ loggedInUser()?.income }}</div>
+        </div>
+        <div class="">
+          <div class="income">
+            <mat-icon class="small_icon">arrow_upward</mat-icon>
+            <span class="income_h">Expenses</span>
+          </div>
+          <div class="income_value">${{ loggedInUser()?.expenses }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="heading">
+        <h4 class="">Recent Expenses</h4>
+        <h5 (click)="filterExpenses('',1)" style="cursor: pointer;" >see all</h5>
+      </div>
+      <div
+        class="scroll-container"
+        (scroll)="onScroll($event)"
+        style="padding-bottom: 80px"
+      >
+      <ng-container *ngIf="expenses().length; else emptyBlock">
+        <ng-container *ngFor="let expense of expenses();">
+          <app-list-item [listItem]="expense"></app-list-item>
+        </ng-container>
+        </ng-container>
+        <ng-template #emptyBlock>
+  <div class="item">No expenses found.</div>
+</ng-template>
+         <div matSuffix class="spinner-container">
+        <mat-progress-spinner
+        *ngIf="isLoading()"
+           mode="indeterminate"
+      diameter="40"
+      color="primary"
+        ></mat-progress-spinner>
+        </div>
+        <div class="">
+          <div class="">
+            <a
+              mat-fab
+              color="accent"
+              [routerLink]="['/add-expense']"
+              class="add-link"
+            >
+              <mat-icon>add</mat-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

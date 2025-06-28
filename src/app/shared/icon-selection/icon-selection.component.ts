@@ -15,7 +15,7 @@ export class IconSelectionComponent extends BaseFormInputComponent{
       this.selectedCategory=value;
     const selected = this.categories.find(opt => opt.value === value);
     if (selected) {
-      this.control?.setValue(selected.value);
+      this.control?.setValue(selected.icon);
     }
   }
   

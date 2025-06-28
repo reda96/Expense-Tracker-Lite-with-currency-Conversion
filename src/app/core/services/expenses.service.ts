@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastService } from './toast.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, map, tap } from 'rxjs';
 import { Expense } from '../models/expense';
 
 @Injectable({
@@ -12,10 +12,13 @@ import { Expense } from '../models/expense';
 export class ExpensesService {
 
   private apiUrl = environment.url; // JSON Server UR
+   private totalItems = signal<number>(0);
+  items = this.totalItems.asReadonly();
   private exchangeRateSub = new BehaviorSubject<number>(0);
   public get exchangeRate$() {
     return this.exchangeRateSub.asObservable();
   }
+  
   constructor(private http: HttpClient,
     private toast: ToastService,
     private router:Router
@@ -27,8 +30,30 @@ export class ExpensesService {
     }
 
     addExpense(expense:Expense) {
-       this.http.post<any>(`${this.apiUrl}/expenses`,expense)
+       this.http.post<any>(`${this.apiUrl}/expenses`,{...expense,dateInt: this.formatDateForJsonServer(new Date(expense.date)) })
            .pipe(tap(res=> this.router.navigate(['dashboard']))).subscribe( );
     }
-  
+       getExpenses(userId:string, filterType:string,page:number) {
+        let today:any = new Date();
+      
+        let date:any = new Date();
+        if(filterType == "week")         
+         date.setDate(today.getDate() - 7);
+        else  if(filterType == "month") date =new Date(today.getFullYear(), today.getMonth(), 1)
+         
+          today = (this.formatDateForJsonServer(today));
+        date = (this.formatDateForJsonServer(date));
+        if(!filterType) {
+           date = 0;
+        }
+     // return this.http.get<any>(`${this.apiUrl}/expenses?dateInt_gt=${date}`);
+      
+      return this.http.get<any>(`${this.apiUrl}/expenses?userId=${userId}&dateInt_gte=${date}&_page=${page}&_per_page=10&_sort=-dateInt&_order=desc`)
+      .pipe(map(res=>{
+        this.totalItems.set(res.items)
+        return res.data}));
+    }
+   formatDateForJsonServer(date: Date): number {
+  return parseInt(date.toISOString().split('T')[0].replaceAll('-','')) ; // removes milliseconds
+}
 }

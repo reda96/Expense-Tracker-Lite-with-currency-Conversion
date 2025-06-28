@@ -7,6 +7,8 @@ export interface Expense {
   originalCurrency: string; // e.g., 'usd', 'eur'
   convertedAmount: number;
   date: string; // ISO 8601 format
+  dateInt:number;
+  
   imageReceipt?: {
     url: string;        // Image URL or base64 string
     fileName?: string;  // Optional original file name

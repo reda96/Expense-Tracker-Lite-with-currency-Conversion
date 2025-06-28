@@ -1,0 +1,11 @@
+<div class="item">
+  <div class="content">
+    <mat-icon>{{listItem.icon}}</mat-icon>
+     
+    <h3>{{listItem.category}}</h3>
+    <div>
+        <h4>{{"- $"}}{{listItem.convertedAmount}}</h4> 
+          <h6>{{listItem.date  | date:'longDate' }}</h6>
+    </div>
+  </div>
+</div>

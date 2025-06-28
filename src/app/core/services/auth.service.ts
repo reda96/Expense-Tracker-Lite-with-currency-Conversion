@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { ToastService } from './toast.service';
 import {  tap } from 'rxjs';
@@ -14,12 +14,15 @@ export class AuthService {
  private isAuthenticated = signal(false);
  private currentUser = signal<User | null>(null);
  isLoggedIn = this.isAuthenticated.asReadonly();
- loggedInUser = this.currentUser.asReadonly();
- 
+ loggedInUser = this.currentUser.asReadonly() ;
+
   constructor(private http: HttpClient,
     private toast: ToastService,
     private router:Router
-  ) { }
+  ) { 
+  if(!this.currentUser() && localStorage.getItem('currentUser'))
+     this.currentUser.set(JSON.parse(localStorage.getItem('currentUser') ||''))
+  }
 
 
   login(loginData:{email:string, password:string}) {
@@ -29,11 +32,19 @@ export class AuthService {
             this.toast.error('Invalid email or password!');
           else {
             this.isAuthenticated.set(true);
-            localStorage.setItem('currentUserId', res[0].id)
-            this.router.navigate(['dashboard'])}
+            localStorage.setItem('currentUser', JSON.stringify(res[0]));
+            this.currentUser.set(res[0])
+            this.router.navigate(['/dashboard'])}
          })).subscribe();
   }
+logout() {
+     localStorage.removeItem('currentUser');
+     this.currentUser.set(null);
+     this.isAuthenticated.set(false);
+     
+     this.router.navigateByUrl('/login')
 
+}
 
 
 }

@@ -6,11 +6,84 @@
   position: relative;
 }
 .balance_card {
-    width: 70%;
-    background-color: #2D5EFF ;
+    width: 75%;
+    background-color: #4A7DFF ;
     position: relative;
-    top: 80px;
-    height: 250px;
+    top: 20px;
     margin: auto;
     border-radius: 15px;
+    color: white;
+    padding: 30px 20px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+h4,h5{  font-weight: 500 ;
+  margin: 0;
+}}
+.container {
+  max-width: 75%;
+  margin-top: 70px;
+   margin: 35px auto 0;
+}
+.icon {
+  height: 20px;
+}
+.small_icon {
+     padding: 2px;
+    background: royalblue;
+    border-radius: 50%;
+
+}
+.income {
+  align-items: center;display: flex;font-size: 18px;
+}
+.income_expenses {
+  display: flex; justify-content: space-between;margin-top: 15px;max-width: 900px;
+}
+.income_h {
+  display: inline-block; font-weight: 300;;margin-inline-start: 5px;
+}
+.income_value {margin-top: 5px; font-size: 28px; font-weight: 500}
+.add-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  margin: auto  ;
+
+    position: fixed;
+  bottom: 16px;
+  right: calc(50% - 32px);
+  z-index: 1000;
+}
+.add-link .mat-icon {
+ 
+       font-size: 32px;
+    margin: auto;
+    background-color: #4A7DFF;
+    color: white;
+    border: 1px solid #4A7DFF;
+    margin: auto !important;
+    padding: 15px;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+  
+}
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+@media screen and (max-width:768px) {
+  .balance_card {
+    width: 80%;
+   
+  }
+  .container {
+     max-width: 85%;
+  }
+  
 }

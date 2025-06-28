@@ -59,3 +59,23 @@ mat-label {
     flex:none;
     width: 45%;
 }
+.profile_container .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+}
+
+.profile_container .mat-mdc-text-field-wrapper {
+   border-radius: 10px;
+   padding: 0 5px  !important;  
+}
+.profile_container .mat-mdc-select-arrow-wrapper {
+  display: none !important; /* hide the default arrow */
+}
+.profile_container  .mat-mdc-text-field-wrapper {
+height: 40px;
+}
+.profile_container .mat-mdc-form-field-infix   {
+  padding-top: 5px !important;
+}
+.profile_container .mat-mdc-form-field-icon-suffix  button{
+    padding-top: 0;
+}
